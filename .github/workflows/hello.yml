@@ -24,4 +24,4 @@ jobs:
               run: ls -la
 
             - name: Print Runner's name
-              run: echo "Runner is $(unix -o)" 
+              run: echo "Runner is $(uname -o)" 
