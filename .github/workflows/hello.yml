@@ -13,3 +13,15 @@ jobs:
 
             - name: Print Hello
               run: echo "Hello from Gihtub Actions"
+
+            - name: Print date anf time
+              run: date
+
+            - name: Print branch name
+              run : echo "Branch name is ${{ github.ref_name}}"
+
+            - name: List files
+              run: ls -la
+
+            - name: Print Runner's name
+              run: unix -o 
