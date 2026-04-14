@@ -24,4 +24,4 @@ jobs:
               run: ls -la
 
             - name: Print Runner's name
-              run: unix -o 
+              run: uname -o 
