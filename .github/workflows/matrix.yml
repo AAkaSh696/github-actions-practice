@@ -4,10 +4,11 @@ on:
 
 jobs:
     validate-python:
-        runs-on: ubuntu-latest
+        runs-on: ${{ matrix.os}}
         strategy:
             fail-fast: true 
             matrix:
+                os: [windows-latest, macos-latest]
                 python-versions: ["3.10", "3.11", "3.12"]
         
         steps:
@@ -16,5 +17,7 @@ jobs:
               with:
                 python-version:  ${{ matrix.python-versions}}
 
-            - name: Print python version
-              run: echo "version is :" ${{ matrix.python-versions}}
+            - name: Print python version and os
+              run: |
+                 echo "version is :" ${{ matrix.python-versions}}
+                 echo "os is:" ${{ matrix.os}}
