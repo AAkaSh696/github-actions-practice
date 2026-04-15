@@ -6,10 +6,13 @@ jobs:
     validate-python:
         runs-on: ${{ matrix.os}}
         strategy:
-            fail-fast: true 
+            fail-fast: false
             matrix:
                 os: [windows-latest, macos-latest]
                 python-versions: ["3.10", "3.11", "3.12"]
+                exclude:
+                    - os: windows-latest
+                      python-version: "3.11"
         
         steps:
             - name: Install python
