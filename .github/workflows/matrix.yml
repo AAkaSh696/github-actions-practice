@@ -1,0 +1,20 @@
+name: Matrix Builds 
+on: 
+    workflow_dispatch:
+
+jobs:
+    validate-python:
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: true 
+            matrix:
+                python-versions: ["3.10", "3.11", "3.12"]
+        
+        steps:
+            - name: Install python
+              uses: actions/setup-python@v4
+              with:
+                python-version:  ${{ matrix.python-versions}}
+
+            - name: Print python version
+              run: echo "version is :" ${{ matrix.python-versions}}
