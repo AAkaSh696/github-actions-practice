@@ -1,0 +1,33 @@
+name: Runners Check
+
+on:
+    workflow_dispatch:
+
+jobs:
+    ubuntu-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: for ubuntu
+              run: |
+                 echo "OS name is:" $(uname -o) 
+                 echo "Hostname is:" $(hostname) 
+                 echo "Current User is:" $(whoami) 
+                 
+    windows-job:
+        runs-on: windows-latest
+        steps:
+            - name: for windows
+              run: |
+                 echo "OS name is:" $(uname -o) 
+                 echo "Hostname is:" $(hostname) 
+                 echo "Current User is:" $(whoami) 
+
+    macos-job:
+        runs-on: macos-latest
+        steps:
+            - name: for macos
+              run: |
+                 echo "OS name is:" $(uname -o) 
+                 echo "Hostname is:" $(hostname) 
+                 echo "Current User is:" $(whoami) 
+
