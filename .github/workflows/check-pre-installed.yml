@@ -1,0 +1,20 @@
+name: Check Pre-installed
+
+on :
+    workflow_dispatch:
+
+jobs:
+    check:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checking Docker
+              run: docker --version
+
+            - name: Checking python
+              run: python --version
+
+            - name: Checking node
+              run: node --version
+
+            - name: Checking git
+              run: git --version
