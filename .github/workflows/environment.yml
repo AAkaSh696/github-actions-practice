@@ -17,9 +17,9 @@ jobs:
               env:
                 VERSION: 1.0.0 
               run: |
-                 echo "App name: $(APP_NAME)"
-                 echo "Environment is $(ENVIRONMENT)"
-                 echo "Version is $(VERSION)"
-                 echo "Commit id :" ${{ github.sha}}
-                 echo "Triggered by: " ${{ github.actor}}
+                 echo "App name: $APP_NAME"
+                 echo "Environment: $ENVIRONMENT"
+                 echo "Version: $VERSION"
+                 echo "Commit id: ${{ github.sha}}"
+                 echo "Triggered by:  ${{ github.actor}}"
 
