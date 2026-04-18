@@ -31,4 +31,3 @@ jobs:
                  echo "Commit id :" ${{ github.sha}}
                  echo "Triggered by: " ${{ github.actor}}
 
-    
