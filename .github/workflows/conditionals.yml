@@ -1,0 +1,22 @@
+name: Conditional Job
+
+on:
+    push:
+    pull_request:
+
+jobs:
+    conditional-job:
+        if: github.event_name == 'push'
+        runs-on: ubuntu-latest
+        steps: 
+            - name: Run step if main
+              if: github.ref == 'ref/heads/main'
+              run: echo "running on main branch"
+
+            - name: Test continue or error
+              run: exit 1
+              continue-on-error: true
+
+            - name: Checking code
+              if: failure()
+              run: echo "Code is still running"
