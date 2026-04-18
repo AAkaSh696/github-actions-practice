@@ -14,9 +14,10 @@ jobs:
               run: echo "running on main branch"
 
             - name: Test continue or error
-              run: $(data)
+              id: failstep
+              run: exit 1
               continue-on-error: true
 
             - name: Checking code
-              if: failure()
+              if: steps.failstep.outcome == 'failure'
               run: echo "Code is still running"
