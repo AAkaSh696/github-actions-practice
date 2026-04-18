@@ -14,8 +14,7 @@ jobs:
               run: echo "running on main branch"
 
             - name: Test continue or error
-              id: failstep
-              run: exit 1
+              run: $(data)
               continue-on-error: true
 
             - name: Checking code
