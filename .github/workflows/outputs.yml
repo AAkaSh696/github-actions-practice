@@ -11,12 +11,11 @@ jobs:
         steps:
             - name: Generate date
               id: genDATE
-              run: |
-                date: $(date)
+              run: echo "date=$(date)" >> $GITHUB_OUTPUT 
 
     print-date:
         runs-on: ubuntu-latest
         needs: [set-date]
         steps:
             - name: Today date
-              run: echo "Todays date:"" ${{ needs.set-date.outputs.today}}
+              run: echo "Todays date is  ${{ needs.set-date.outputs.today}}"
