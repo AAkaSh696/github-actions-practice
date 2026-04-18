@@ -7,23 +7,15 @@ env:
     APP_NAME: myapp
 
 jobs:
-    set-job-env:
+    env-job:
         runs-on: ubuntu-latest
         env:
             ENVIRONMENT: staging
 
-    set-step-env:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Set Env
-              run: echo " Setting env variable"
-              env:
-                VERSION: 1.0.0
-
-    print-env:
-        runs-on: ubuntu-latest
         steps:
             - name: Print variables
+              env:
+                VERSION: 1.0.0 
               run: |
                  echo "App name: $(APP_NAME)"
                  echo "Environment is $(ENVIRONMENT)"
