@@ -1,0 +1,16 @@
+name: Task 5 day 44
+on:
+    workflow_dispatch:
+
+jobs:
+    python-run:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Install dependency
+              run: pip install -r requirements.txt
+
+            - name: Run app
+              run: python app.py
