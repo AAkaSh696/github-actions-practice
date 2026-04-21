@@ -1,4 +1,4 @@
-name: Upload artifacts
+name: Upload and Download artifacts
 
 on: 
     workflow_dispatch:
@@ -15,3 +15,11 @@ jobs:
               with:
                 name: my_log.txt
                 path: log.txt
+
+            - name: Download Artifacts
+              uses: actions/download-artifact@v4
+              with: 
+                name: my_log.txt
+
+            - name: Print content
+              run: cat my_log.txt
