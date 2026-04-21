@@ -17,6 +17,7 @@ jobs:
                 password: ${{ secrets.DOCKER_TOKEN }}
 
             - name: Build and push 
+              if: github.ref == 'refs/head/main'
               uses: docker/build-push-action@v7
               with:
                 context: .
