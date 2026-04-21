@@ -13,4 +13,7 @@ jobs:
               run: pip install -r requirements.txt
 
             - name: Run app
-              run: python app.py
+              run: |
+                 python app.py &   # &-> run in background
+                 sleep 5
+                 curl http://localhost:5000
