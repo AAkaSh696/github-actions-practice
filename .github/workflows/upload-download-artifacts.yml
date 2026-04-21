@@ -22,4 +22,4 @@ jobs:
                 name: my_log.txt
 
             - name: Print content
-              run: cat my_log.txt
+              run: cat log.txt
