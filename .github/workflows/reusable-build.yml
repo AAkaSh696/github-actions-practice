@@ -7,7 +7,6 @@ on:
             app_name:
                 required: true
                 type: string 
-
             environment :
                 required: true
                 type: string
@@ -17,14 +16,14 @@ on:
                 required: true
         outputs:
             build_version:
-                value: ${{jobs.build.outputs.version}}
+                value: ${{ jobs.build.outputs.version }}
 
 
 jobs:
     reusable_job:
         runs-on: ubuntu-latest
         outputs:
-            version: ${{ steps.set_var.outputs.version}}
+            version: ${{ steps.set_var.outputs.version }}
         steps:
             - name: Checkout Code
               uses: actions/checkout@v4
