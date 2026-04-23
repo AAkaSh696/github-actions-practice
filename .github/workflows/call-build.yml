@@ -19,4 +19,4 @@ jobs:
         needs: [build]
         steps:
             - name: Printing Version
-              run: echo "Build version is ${{ needs.reusable_job.outputs.build_version}}"
+              run: echo "Build version is ${{ needs.build.outputs.build_version}}"
