@@ -42,4 +42,4 @@ jobs:
 
             - name: Generate Version
               id: set_var
-              run: echo "version=v1.0-$(GITHUB_SHA::7)" >> $GITHUB_OUTPUT 
+              run: echo "version=v1.0-${GITHUB_SHA::7}" >> $GITHUB_OUTPUT 
