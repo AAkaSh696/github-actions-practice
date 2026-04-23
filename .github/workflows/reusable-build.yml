@@ -12,15 +12,19 @@ on:
                 required: true
                 type: string
                 default: staging
-
         secrets:
              docker_token:
                 required: true
+        outputs:
+            build_version:
+                value: ${{jobs.build.outputs.version}}
 
 
 jobs:
     reusable_job:
         runs-on: ubuntu-latest
+        outputs:
+            version: ${{ steps.set_var.outputs.version}}
         steps:
             - name: Checkout Code
               uses: actions/checkout@v4
@@ -35,3 +39,7 @@ jobs:
                 else
                     echo "Docker token is not set"
                 fi 
+
+            - name: Generate Version
+              id: set_var
+              run: echo "version=v1.0-$(GITHUB_SHA::7)" >> $GITHUB_OUTPUT 

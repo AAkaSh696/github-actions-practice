@@ -2,6 +2,7 @@ name: Caller Workflow
 
 on:
     push:
+        branches: [main]
 
 jobs:
     build:
@@ -12,3 +13,10 @@ jobs:
 
         secrets:
             docker_token: ${{ secrets.DOCKER_TOKEN }}
+
+    print-version:
+        runs-on: ubuntu-latest
+        needs: [build]
+        steps:
+            - name: Printing Version
+              run: echo "Build version is ${{ needs.build.outputs.build_version}}"
