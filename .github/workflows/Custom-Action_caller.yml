@@ -1,0 +1,15 @@
+name: Use custom action
+
+on: 
+    push
+
+jobs:
+    greet:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Calling Custom action
+              uses: ./.github/actions/setup-and-greet
+              with:
+                name: "Aakash"
+                language: "en"
+                
