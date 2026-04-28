@@ -21,4 +21,4 @@ jobs:
               run: echo "PR gets merged"
 
             - name: Updating for testing opened 
-              run : echo "Checking 1,2,3,4"
+              run : echo "Checking 1,2,3"
