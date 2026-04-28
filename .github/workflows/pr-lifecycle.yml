@@ -18,4 +18,4 @@ jobs:
 
             - name: Run when PR merged
               if: github.event.pull_request.merged == true
-              run: echo "PR merged"
+              run: echo "PR gets merged"
