@@ -36,10 +36,10 @@ jobs:
               run: |
                 PR_BODY="${{ github.event.pull_request.body }}"
                 if [ -z "$PR_BODY" ]; then
-                    echo "Warning PR description is empty "
+                    echo "Warning PR description is empty"
                 else
                     echo "PR description is present"
                 fi 
 
             - name: Testing 
-              run: echo "testing "
+              run: echo "testing"
