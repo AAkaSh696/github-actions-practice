@@ -20,5 +20,5 @@ jobs:
               if: github.event.pull_request.merged == true
               run: echo "PR gets merged"
 
-            - name: Updating for testing opened 
+            - name: Updating for testing
               run : echo "Checking 1,2,3"
