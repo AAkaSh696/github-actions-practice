@@ -38,8 +38,7 @@ jobs:
                 if [ -z "$PR_BODY" ]; then
                     echo "Warning PR description is empty "
                 else
-                    echo "PR description is present"
-                fi 
+                    echo "PR description is present
 
             - name: Testing 
               run: echo "testing "
