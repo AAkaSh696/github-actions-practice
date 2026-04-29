@@ -5,7 +5,7 @@ on:
         - cron: '30 2 * * 1'
         - cron: '0 */6 * * *'
     workflow_dispatch:
-        
+
 jobs:
     health-check-job:
         runs-on: ubuntu-latest
@@ -15,7 +15,7 @@ jobs:
 
             - name: Website Health Check
               run: |
-                STATUS=$(curl -o dev/null -s -w "%{http_code}" http://google.com)
+                STATUS=$(curl -o /dev/null -s -w "%{http_code}" http://google.com)
                 echo "Received Status code : $STATUS"
 
                 if [ "$STATUS" -ne 200 ]; then 
