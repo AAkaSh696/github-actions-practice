@@ -1,7 +1,8 @@
 name: Use custom action
 
 on: 
-    push
+    # push
+    workflow_dispatch:
 
 jobs:
     greet:
