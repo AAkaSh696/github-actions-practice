@@ -1,0 +1,15 @@
+name: Smart Trigger
+
+on:
+    push:
+        branches: [main, 'release/*']
+        paths:
+            - 'src/**'
+            - 'app/**'
+
+jobs:
+    path-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Triggered cause
+              run: echo "Triggered due to code change "

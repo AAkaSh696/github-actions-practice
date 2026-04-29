@@ -1,0 +1,14 @@
+name: Path ignore workflow 
+
+on:
+    push:
+        paths-ignore:
+            - '*.md'
+            - 'docs/**'
+
+jobs:
+    skip:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Path ignored
+              run: echo "Docs changes ignored"
