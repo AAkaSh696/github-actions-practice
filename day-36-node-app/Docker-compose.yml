@@ -1,0 +1,32 @@
+services:
+  mongo:
+    container_name: mongo-data
+    image: mongo
+    volumes:
+      - db-vol:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.runCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - my-net
+  app:
+    build: ./app
+    container_name: node-app
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    depends_on:
+      mongo:
+        condition: service_healthy
+
+volumes:
+  db-vol:
+
+networks:
+  my-net:
+    driver: bridge
+    
